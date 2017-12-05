@@ -24,7 +24,7 @@ def main():
         setup_test_dir()
         get_day_input(sys.argv[2])
 
-    cprint("Part %02d for day %s" % (exercise, DAY), 'magenta')
+    cprint("Part %02d for day %s" % (int(exercise), DAY), 'magenta')
     if exercise == '1':
         importlib.import_module('.solution', package='day%02d' % DAY).part_one()
     elif exercise == '2':
