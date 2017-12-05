@@ -20,9 +20,6 @@ def has_input(part):
         with open(os.path.join(decorator_dir, rel_path), 'r') as input_file:
             input_text = input_file.read()
 
-        cprint("Part %s for day %s" % (01, day), 'magenta')
-        print ' '
-
         start = time.time()
         part(input_text)
 
