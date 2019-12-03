@@ -17,7 +17,11 @@ YEAR, DAY = get_year_day()
 
 
 def main():
+    global DAY
     exercise = sys.argv[1]
+
+    if len(sys.argv) > 3:
+        DAY = int(sys.argv[3])
 
     if not os.path.exists(get_relative_path()):
         cprint("FIRST RUN", 'red')
@@ -64,6 +68,7 @@ def get_day_input(session):
     """
     Pulls down the input based on the current year/day. Requires the user session.
     """
+
     r = requests.get(
         'http://adventofcode.com/{year}/day/{day}/input'.format(year=YEAR, day=DAY),
         cookies=dict(session=session))
